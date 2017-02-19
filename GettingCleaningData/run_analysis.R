@@ -56,3 +56,4 @@ colnames(sub_MData)[1:2] <- c("Activity","Subject")
 TidyData <-  ddply(sub_MData,.(Subject, Activity),
                    function(x) colMeans(x[, 2:ncol(x)]))
 head(TidyData[,1:10],10)
+write.csv(TidyData,file = "TidyData.csv")
